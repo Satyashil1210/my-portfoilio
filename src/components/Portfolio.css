@@ -1,0 +1,328 @@
+/* --------------------
+ Global Styles
+-------------------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Background grid effect */
+.portfolio {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.portfolio::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(138,43,226,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138,43,226,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  animation: moveGrid 30s linear infinite;
+}
+
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 50px 50px; }
+}
+
+/* Accent color */
+.accent {
+  color: #8a2be2;
+  font-weight: 600;
+  background: linear-gradient(90deg, #8a2be2, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.accent-link {
+  color: #8a2be2;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.accent-link:hover {
+  text-decoration: underline;
+  color: #a855f7;
+}
+
+/* --------------------
+ Section Styling
+-------------------- */
+.section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, #8a2be2, #a855f7);
+  border-radius: 2px;
+}
+
+/* --------------------
+ Hero Section
+-------------------- */
+.hero {
+  text-align: center;
+  padding: 120px 20px 100px;
+}
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #8a2be2;
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+  margin-bottom: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.profile-pic:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 0 40px rgba(138, 43, 226, 0.7);
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin: 10px 0;
+  background: linear-gradient(90deg, #8a2be2, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  margin: 8px;
+  font-weight: 500;
+  background: linear-gradient(90deg, #8a2be2, #a855f7);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.4s;
+  box-shadow: 0 5px 15px rgba(138,43,226,0.3);
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(138,43,226,0.5);
+}
+.btn.outline {
+  background: transparent;
+  border: 2px solid #8a2be2;
+  color: #8a2be2;
+}
+.btn.outline:hover {
+  background: linear-gradient(90deg, #8a2be2, #a855f7);
+  color: #fff;
+}
+
+/* Social icons */
+.hero-social {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.hero-social a {
+  font-size: 1.6rem;
+  color: #ccc;
+  transition: 0.4s;
+}
+.hero-social a:hover {
+  color: #a855f7;
+  transform: scale(1.4) rotate(-10deg);
+}
+
+/* --------------------
+ About Section
+-------------------- */
+#about p {
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.8;
+  transition: color 0.3s;
+}
+#about p:hover {
+  color: #fff;
+}
+
+/* --------------------
+ Education & Achievements
+-------------------- */
+.info-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: auto;
+}
+.info-list li {
+  margin: 12px 0;
+  padding: 14px 18px;
+  background: rgba(138,43,226,0.1);
+  border-left: 4px solid #8a2be2;
+  border-radius: 8px;
+  color: #eee;
+  transition: transform 0.4s, background 0.4s;
+}
+.info-list li:hover {
+  transform: translateX(6px);
+  background: rgba(138,43,226,0.2);
+}
+
+/* --------------------
+ Skills Section
+-------------------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+.skills-grid div {
+  background: rgba(138,43,226,0.05);
+  padding: 16px 18px;
+  border-radius: 10px;
+  transition: 0.3s;
+  text-align: center;
+  font-weight: 500;
+}
+.skills-grid div:hover {
+  background: rgba(138,43,226,0.2);
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* --------------------
+ Projects Section
+-------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.project-card {
+  background: rgba(138,43,226,0.05);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+}
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+  background: rgba(138,43,226,0.15);
+}
+.project-card h3 {
+  margin-bottom: 14px;
+  color: #fff;
+  font-size: 1.3rem;
+}
+.link-btn {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #a855f7;
+  text-decoration: none;
+  font-weight: 500;
+}
+.link-btn:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* --------------------
+ Contact Section
+-------------------- */
+#contact p {
+  text-align: center;
+  color: #ddd;
+}
+.contact-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+.contact-buttons .btn {
+  margin: 10px;
+}
+
+/* --------------------
+ Footer
+-------------------- */
+.footer {
+  text-align: center;
+  padding: 30px 10px;
+  background: rgba(138,43,226,0.1);
+  margin-top: 50px;
+  font-size: 0.95rem;
+  color: #aaa;
+  transition: background 0.3s;
+}
+.footer:hover {
+  background: rgba(138,43,226,0.15);
+}
+.footer span {
+  color: #a855f7;
+}
+
+/* --------------------
+ Reveal Animations
+-------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------
+ Responsive Tweaks
+-------------------- */
+@media(max-width:768px){
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
